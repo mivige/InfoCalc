@@ -33,46 +33,46 @@ InfoCalc è una calcolatrice interattiva basata su Python che ti permette di cal
 
 Inserisci le probabilità:  
 ```
-0.5, 0.5
+0.35, 0.15, 0.50
 ```
 
 Risultato:  
 ```
-Entropia: 1.000000 bit
+Entropia: 1.440645 bit
 ```
 
 ### Lunghezza media
 
 Inserisci le lunghezze:  
 ```
-1, 2, 3
+2, 3, 4, 4, 1
 ```
 
 Inserisci le probabilità:  
 ```
-0.2, 0.3, 0.5
+0.20, 0.15, 0.05, 0.15, 0.45
 ```
 
 Risultato:  
 ```
-Lunghezza media: 2.300000
+Lunghezza media: 2.100000
 ```
 
 ### Efficienza
 
 Inserisci l'entropia:  
 ```
-1.0
+2.01997
 ```
 
 Inserisci la lunghezza media:  
 ```
-2.0
+2.1
 ```
 
 Risultato:  
 ```
-Efficienza: 0.500000
+Efficienza: 0.961890
 ```
 
 ---
