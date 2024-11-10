@@ -1,81 +1,48 @@
-# InfoCalc: Calcolatrice per la Teoria dell'Informazione 
+# InfoCalc: Calculator for Information Theory
 
-InfoCalc è una calcolatrice interattiva basata su Python che ti permette di calcolare facilmente l'entropia, la lunghezza media e l'efficienza secondo i principi della teoria dell'informazione. Sfrutta una semplice interfaccia grafica creata con `Tkinter`, ideale per studenti, ricercatori o appassionati di teoria dell'informazione.
+**InfoCalc** is an interactive Python-based calculator for information theory, designed to make it easy to calculate entropy, average length, and efficiency. It features a simple graphical interface built with `Tkinter`, making it ideal for students, researchers, or information theory enthusiasts.
 
----
+## Features
 
-## Funzionalità
+- **Entropy Calculation**: Computes entropy based on a given probability distribution.
+- **Average Length Calculation**: Determines the average code length given lengths and probabilities.
+- **Efficiency Calculation**: Calculates code efficiency based on entropy and average length.
 
-- **Calcolo dell'entropia**: Fornisce l'entropia di una distribuzione di probabilità.
-- **Calcolo della lunghezza media**: Determina la lunghezza media di un codice dato un insieme di lunghezze e probabilità.
-- **Calcolo dell'efficienza**: Calcola l'efficienza di un codice in base all'entropia e alla lunghezza media.
+## Installation
 
-## Come usare InfoCalc
+To install **InfoCalc**, download the `.exe` file from the repository. Run the file directly without needing to install Python.
 
-1. Seleziona l'operazione che desideri eseguire (Entropia, Lunghezza media o Efficienza) dal menu a tendina.
-2. Inserisci i valori richiesti:
-   - Per l'entropia: inserisci una lista di probabilità separate da virgola (es. `0.2, 0.3, 0.5`).
-   - Per la lunghezza media: inserisci una lista di lunghezze e una lista di probabilità corrispondenti (es. lunghezze: `1, 2, 3`, probabilità: `0.2, 0.3, 0.5`).
-   - Per l'efficienza: inserisci il valore dell'entropia e la lunghezza media.
-3. Premi **Calcola** per visualizzare il risultato.
+## Usage
 
-## Installazione
+1. Select the operation you want (Entropy, Average Length, or Efficiency) from the dropdown menu.
+2. Enter the values:
+    - For entropy: a comma-separated list of probabilities (e.g., `0.2, 0.3, 0.5`).
+    - For average length: a comma-separated list of lengths and a corresponding list of probabilities (e.g., `1, 2, 3`, probabilities: `0.2, 0.3, 0.5`).
+    - For efficiency: enter the values of entropy and average length.
+3. Press **Calculate** to see the result.
 
-1. Scarica il file .exe da questo repository.
+## Example
 
-2. Esegui il file .exe facendo doppio clic. Non è necessario installare Python.
+### Entropy
+**Input**: `0.35, 0.15, 0.50`  
+**Output**: `Entropy: 1.440645 bits`
 
----
+### Average Length
+**Input**:  
+  - Lengths: `2, 3, 4, 4, 1`  
+  - Probabilities: `0.20, 0.15, 0.05, 0.15, 0.45`  
+**Output**: `Average Length: 2.100000`
 
-## Esempi di utilizzo
+### Efficiency
+**Input**:  
+  - Entropy: `2.01997`  
+  - Average Length: `2.1`  
+**Output**: `Efficiency: 0.961890`
 
-### Entropia
+## Contributing
 
-Inserisci le probabilità:  
-```
-0.35, 0.15, 0.50
-```
+Pull requests are welcome! For major changes, please open an issue first to discuss potential improvements.
 
-Risultato:  
-```
-Entropia: 1.440645 bit
-```
+## License
 
-### Lunghezza media
-
-Inserisci le lunghezze:  
-```
-2, 3, 4, 4, 1
-```
-
-Inserisci le probabilità:  
-```
-0.20, 0.15, 0.05, 0.15, 0.45
-```
-
-Risultato:  
-```
-Lunghezza media: 2.100000
-```
-
-### Efficienza
-
-Inserisci l'entropia:  
-```
-2.01997
-```
-
-Inserisci la lunghezza media:  
-```
-2.1
-```
-
-Risultato:  
-```
-Efficienza: 0.961890
-```
-
----
-
-## Contribuire
-Le pull request sono benvenute! Se hai suggerimenti o idee su come migliorare il progetto, sentiti libero di aprire un'issue o contribuire direttamente.
+This project is licensed under the MIT License.
