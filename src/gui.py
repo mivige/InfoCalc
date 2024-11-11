@@ -9,16 +9,16 @@ def start_app():
     def esegui_calcolo():
         scelta = combo_scelta.get()
 
-        if scelta == "Entropia":
+        if scelta == "Entropy":
             prob_input = entry_input.get()
             probabilita = [float(p) for p in prob_input.split(',')]
             if not validate_probabilities(probabilita):
                 label_risultato.config(text="Error: Incorrect probabilities.")
                 return
             risultato = calcola_entropia(probabilita)
-            label_risultato.config(text=f"Entropia: {risultato:.6f} bit")
+            label_risultato.config(text=f"Entropy: {risultato:.6f} bits")
         
-        elif scelta == "Lunghezza media":
+        elif scelta == "Average Length":
             lungh_input = entry_input.get()
             prob_input = entry_prob.get()
             lunghezze = [int(l) for l in lungh_input.split(',')]
@@ -27,34 +27,34 @@ def start_app():
                 label_risultato.config(text="Error: Lengths or probabilities unvalid.")
                 return
             risultato = calcola_lunghezza_media(lunghezze, probabilita)
-            label_risultato.config(text=f"Lunghezza media: {risultato:.6f}")
+            label_risultato.config(text=f"Average Length: {risultato:.6f}")
         
-        elif scelta == "Efficienza":
+        elif scelta == "Efficiency":
             entropia = float(entry_input.get())
             lunghezza_media = float(entry_prob.get())
             risultato = calcola_efficienza(entropia, lunghezza_media)
-            label_risultato.config(text=f"Efficienza: {risultato:.6f}")
+            label_risultato.config(text=f"Efficiency: {risultato:.6f}")
 
 
     def aggiorna_etichette(*args):
         scelta = combo_scelta.get()
-        if scelta == "Entropia":
-            label_input.config(text="Inserisci le probabilità:")
+        if scelta == "Entropy":
+            label_input.config(text="Insert probabilities:")
             label_prob.config(text="")
             entry_prob.grid_remove()
-        elif scelta == "Lunghezza media":
-            label_input.config(text="Inserisci le lunghezze:")
-            label_prob.config(text="Inserisci le probabilità:")
+        elif scelta == "Average Length":
+            label_input.config(text="Insert lengths:")
+            label_prob.config(text="Insert probabilities:")
             entry_prob.grid()
-        elif scelta == "Efficienza":
-            label_input.config(text="Inserisci l'entropia:")
-            label_prob.config(text="Inserisci la lunghezza media:")
+        elif scelta == "Efficiency":
+            label_input.config(text="Insert entropy:")
+            label_prob.config(text="Insert average length:")
             entry_prob.grid()
     # Creazione della finestra principale e dei widget come nel file sorgente fornito
 
     # Creazione della finestra principale
     root = tk.Tk()
-    root.title("Calcolatrice Teoria dell'Informazione")
+    root.title("Calculator for Information Theory")
     root.geometry("600x400")
     root.resizable(False, False)
 
@@ -62,13 +62,13 @@ def start_app():
     frame = ttk.Frame(root, padding="20")
     frame.place(relx=0.5, rely=0.5, anchor="center")
 
-    ttk.Label(frame, text="Scegli l'operazione:").grid(column=0, row=0, sticky=tk.W)
-    combo_scelta = ttk.Combobox(frame, values=["Entropia", "Lunghezza media", "Efficienza"])
+    ttk.Label(frame, text="Select operation:").grid(column=0, row=0, sticky=tk.W)
+    combo_scelta = ttk.Combobox(frame, values=["Entropy", "Average Length", "Efficiency"])
     combo_scelta.grid(column=1, row=0)
-    combo_scelta.set("Entropia")
+    combo_scelta.set("Entropy")
     combo_scelta.bind("<<ComboboxSelected>>", aggiorna_etichette)
 
-    label_input = ttk.Label(frame, text="Inserisci le probabilità:")
+    label_input = ttk.Label(frame, text="Insert probabilities:")
     label_input.grid(column=0, row=1, sticky=tk.W)
     entry_input = ttk.Entry(frame, width=40)
     entry_input.grid(column=1, row=1)
@@ -79,7 +79,7 @@ def start_app():
     entry_prob.grid(column=1, row=2)
     entry_prob.grid_remove()
 
-    ttk.Button(frame, text="Calcola", command=esegui_calcolo).grid(column=1, row=3)
+    ttk.Button(frame, text="Calculate", command=esegui_calcolo).grid(column=1, row=3)
 
     label_risultato = ttk.Label(frame, text="")
     label_risultato.grid(column=0, row=4, columnspan=2, pady=(20, 0))
