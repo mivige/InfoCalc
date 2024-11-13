@@ -5,7 +5,7 @@ InfoCalc provides a straightforward way to calculate entropy, average length, an
 ## Getting Started
 
 ### Launching InfoCalc
-1. Open the `.exe` file in the `dist` folder to launch the application.
+1. Open the `.exe` file to launch the application.
 2. The main window will display a dropdown menu, input fields, and a **Calculate** button.
 
 ## Operations
